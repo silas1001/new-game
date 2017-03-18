@@ -1,0 +1,14 @@
+<!--Created by Tarnos on 2016-12-29.
+
+
+-->
+<div class="row">
+    <div class="col-xs-6" ng-repeat="(key, type) in profession">
+        <h1 class="text-center">{{key}}</h1>
+        <div class="row">
+            <div class="col-xs-4" ng-repeat="resource in type.resources">
+                <p>{{resource.name}}: {{resource.amount}}</p>
+            </div>
+        </div>
+    </div>
+</div>

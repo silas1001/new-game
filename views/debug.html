@@ -1,0 +1,11 @@
+<!--Created by Tarnos on 2017-02-25.
+-->
+<div class="row">
+    <div class="col-xs-12 overflow-y" id="gameLog" style="border: 1px dotted">
+        <h3 class="text-center">Debug log</h3>
+        <div class="row" ng-repeat="val in log.logs track by $index">
+            <div class="col-xs-12 text-center"><small>{{val}}</small>
+            </div>
+        </div>
+    </div>
+</div>

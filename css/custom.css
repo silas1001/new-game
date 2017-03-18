@@ -1,0 +1,98 @@
+html, body, .container-fluid {
+    height:100vh;
+}
+body{
+    background-color: #00c0a5;
+}
+span{
+    font-size: 1.3em;
+}
+.background{
+    width: 64px;
+    height: 64px;
+    background: url(../img/itemBackground.png), url(../img/itemForeground.png) no-repeat;
+}
+.selectedEnemy{
+    border: 1px solid;
+}
+.item{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.vh20{
+    height: 20vh;
+}
+#inventory{
+    height:30vh;
+    background-color: #761c19;
+    background-clip: padding-box;
+}
+#middleRow{
+    height: 5vh;
+    padding-top:10px;
+}
+#mainRow{
+    height:50vh;
+    margin-top:20px;
+    border: 10px solid;
+    padding-top:20px;
+}
+#ngView{
+    height: 40vh;
+}
+#gameLog{
+    height: 35vh;
+}
+#navBarRow{
+    height: 5vh;
+}
+.overflow-y{
+    overflow-y: auto;
+}
+.border{
+    border: 20px solid;
+    -moz-border-image: url(../img/boxNormal.png) 20 20 20 20 repeat repeat;
+    -webkit-border-image: url(../img/boxNormal.png) 20 20 20 20 repeat repeat;
+    -o-border-image: url(../img/boxNormal.png) 20 20 20 20 repeat repeat;
+}
+.glyphicon{
+    font-size: 1.4em;
+}
+.vis-hidden{
+    visibility: hidden;
+}
+.progress-value{
+    position:absolute;
+    left: 0;
+    right: 0;
+}
+.popover-content {
+    white-space: nowrap;
+}
+
+/* Progress bar custom changes */
+
+.progress{
+    height: 12px;
+    margin-bottom: 5px;
+}
+.progress-bar{
+    font-size: 8px;
+    line-height: 12px;
+}
+
+/* Animate text */
+
+.smallBox{
+    position: absolute;
+    z-index: 1;
+    bottom: 16px;
+    left: 49px;
+    color: white;
+    font-size: 11px;
+    line-height: 1em;
+    width: 30px;
+    text-align: center;
+    border: 1px solid;
+    margin-bottom: -13px;
+}

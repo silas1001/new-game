@@ -1,0 +1,57 @@
+<!--Created by Tarnos on 2016-12-29.
+-->
+<div class="col-xs-12">
+    <div class="row" ng-controller="BattleCtrl">
+        <div class="col-xs-12 center-block">
+            <div class="row vh20">
+                <div ng-class="{'col-xs-4 col-md-3 col-md-offset-1': enemies.length === 3, 'col-xs-6 col-md-3 col-md-offset-2': enemies.length === 2, 'col-xs-6 col-xs-offset-3 col-md-2 col-md-offset-5': enemies.length === 1, 'selectedEnemy': $index === battle.selectedEnemy}"
+                ng-click="battle.selectEnemy($index)" ng-repeat="enemy in enemies track by $index">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <uib-progressbar max="enemy.maxHealth" value="enemy.health" type="success"><span class="progress-value" style="color:black; white-space:nowrap">{{enemy.health}} / {{enemy.maxHealth}}</span>
+                            </uib-progressbar>
+                        </div>
+                        <div class="col-xs-12">
+                            <uib-progressbar max="enemy.attackSpeed" value="enemy.currentSpeed" animate="false" type="warning"></uib-progressbar>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="text-center">{{enemy.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row vh20">
+                <div class="col-xs-12 col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="text-center">{{player.name}}({{player.level}})</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <uib-progressbar max="player.maxExperience" value="player.experience"><span class="progress-value" style="color:black; white-space:nowrap">{{player.experience}} / {{player.maxExperience}}</span>
+                            </uib-progressbar>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <uib-progressbar max="player.getMaxHealth()" value="player.health" type="success"><span class="progress-value" style="color:black; white-space:nowrap">{{player.health}} / {{player.getMaxHealth()}}</span>
+                            </uib-progressbar>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-xs-offset-4">
+                            <uib-progressbar max="player.attackSpeed" value="player.currentSpeed" animate="false" type="warning"><span class="progress-value" style="color:black; white-space:nowrap"></span>
+                            </uib-progressbar>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 col-xs-offset-4" ng-show="!isAuto">
+                    <button ng-click="startBattle()">Attack</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<!--Created by Tarnos on 2016-12-26.-->
+<div class="row">
+    <div class="col-xs-4">
+        <div class="row" ng-include="'views/stats.html'"></div>
+    </div>
+    <div class="col-xs-8">
+        <button ng-click="addRandomItem('equipment', 5, 50)">Random Item</button>
+        <div class="row">
+            <div class="col-xs-4 col-lg-2">
+                <div class="row" ng-include="'views/equippedItems.html'"></div>
+            </div>
+            <div class="col-xs-8 col-lg-10 overflow-y border" id="inventory">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="invItem in inventory.items track by $index">
+                        <div class="background item">
+                            <img class="{{('sprite sprite-' + invItem.img)}}" ng-click="inventory.equip(invItem.id)" uib-popover-html="itemTooltip(invItem)" popover-append-to-body="true" popover-trigger="'mouseenter'" />
+                        </div>
+                        <div class="smallBox" ng-show="!invItem.isEquipped">{{invItem.ilvl}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

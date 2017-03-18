@@ -1,0 +1,10 @@
+<!--Created by Tarnos on 2017-02-26.
+
+-->
+<div class="col-xs-8" ng-repeat="(key, eq) in inventory.equippedItems" ng-class="{'col-xs-4': enemies.length === 3, 'col-xs-6': enemies.length === 2, 'col-xs-6 col-xs-offset-3': enemies.length === 1, 'selectedEnemy': $index === battle.selectedEnemy}">
+    <div class="background">
+        <div ng-show="!eq.isEquipped" uib-popover="{{key | camelCase}}" popover-append-to-body="true" popover-trigger="'mouseenter'"></div>
+        <img class="{{('sprite sprite-' + eq.img)}}" ng-show="eq.isEquipped" ng-click="inventory.unequip(eq)" uib-popover-html="itemTooltip(eq)" popover-append-to-body="true" popover-trigger="'mouseenter'" />
+    </div>
+    <div class="smallBox" ng-show="eq.isEquipped">{{eq.ilvl}}</div>
+</div>
