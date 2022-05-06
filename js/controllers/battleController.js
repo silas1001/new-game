@@ -8,8 +8,8 @@ lotfw.controller('BattleCtrl', function($scope, Battle, Game, $interval){
     $scope.Game = Game;
     $scope.enemies = $scope.battle.enemy;
     $scope.figting = false;
-    $scope.isAuto = false;//if auto battle is on
-    $scope.isAutoNext = false;//check if should auto change enemy when winning a battle, set to false when player dies and change enemy Id minus 1, so it go back each time player loses
+    $scope.isAuto = true;//if auto battle is on
+    $scope.isAutoNext = true;//check if should auto change enemy when winning a battle, set to false when player dies and change enemy Id minus 1, so it go back each time player loses
     var timer = 10;//ms speed for update
     var delayBeforeNextBattle = 500;
     $scope.startBattle = function() {
